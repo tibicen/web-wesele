@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400&family=Quicksand:wght@300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Annie Use Your Telescope', cursive; */
+    font-family: 'Jost', sans-serif;
+    font-weight: 100;
+    /* font-family: 'Quicksand', sans-serif; */
+    color: rgb(58, 58, 58);
+}
+
+nav {
+    background-color: white;
+    position: fixed;
+    bottom: 1em;
+    display: inline-block;
+    border-radius: 1em;
+    box-shadow: 0 0 10px -5px;
+    border: 1px solid #80808054;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    
+    
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0 1em;
+}
+
+nav ul li {
+    text-decoration: none;
+    padding: 1em 1em;
+    flex: auto;
+    text-align: center;
+    min-width: 3em;
+}
+
+li a {
+    text-decoration: none;
+    color: rgb(187, 143, 11);
+}
+
+header {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+header img {
+    height: 90vh;
+    margin: auto;
+    margin-top: 0;
+}
+
+section {
+    padding: 1em;
+    width: 90vw;
+    margin: auto;
+}
+
+#info, #kontakt {
+    max-width: 500px;
+    text-justify: distribute;
+    text-align: justify;
+    padding-bottom: 3em;
+}
+
+#kontakt {
+    height: 100vh;
+}
+#mapa2 {
+    margin-top: 1em;
+    width: 90vw;
+    height: 50vh;
+    margin: auto;
+    border: 1px solid #80808054;
+    border-radius: 1em;
+    box-shadow: 0 0 10px -5px;
+}

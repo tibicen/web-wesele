@@ -1,12 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wesele</title>
-</head>
-<body>
-    <h1>wesele</h1>
-</body>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="style.css" />
+    
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#info">Info</a></li>
+        <li><a href="#mapa">Mapa</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <main>
+      <header id="home">
+        <img src="/img/portret-wesele.png" alt="" />
+      </header>
+      <section class="info" id="info">
+          <p>Tutaj będzie treść wesela i zaproszenie. oraz dodatkowe informacje. <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, vero eaque eveniet, tempora mollitia consequuntur illo commodi vitae id laborum voluptate autem perspiciatis deleniti atque amet, neque molestias quo! Reiciendis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus doloremque ipsum tempora amet laborum dolor provident architecto minus voluptatem delectus adipisci dignissimos ad vitae veritatis quaerat, nemo rem quis. Possimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quibusdam dolor repudiandae. Temporibus itaque, officia ab, numquam saepe quis soluta sint ipsam aperiam quibusdam libero accusamus magnam quasi consectetur labore.</p>
+      </section>
+      <section class="mapa" id="mapa">
+        <div id="mapa2"></div>
+      </section>
+      <section class="kontakt" id="kontakt">
+        <p>
+            Informacje Konktaktowe
+        </p>  
+      </section>
+    </main>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+    <script async src="/js/mapa.js"></script>
+  </body>
 </html>
