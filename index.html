@@ -4,57 +4,117 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wesele</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="stylesheet" href="style.css" />
-    
   </head>
-  <body>
-    <nav>
+  <body data-spy="scroll" data-target="#nav">
+    <nav id="nav">
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#info">Info</a></li>
-        <li><a href="#mapa">Mapa</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
+        <li><a class="nav-link" href="#info">Info</a></li>
+        <li><a class="nav-link" href="#plan">Plan</a></li>
+        <li><a class="nav-link" href="#mapa">Mapa</a></li>
+        <li><a class="nav-link" href="#kontakt">Kontakt</a></li>
       </ul>
     </nav>
     <main>
-      <header id="home">
+      <section id="info">
         <img src="/img/portret-wesele.jpg" alt="" />
-        <h1>Aneta i Dawid<br>zapraszają</h1>
-      </header>
-      <section class="info" id="info">
-          <p>Wraz z rodzicami z radością zapraszamy
-            na nasz ślub, który odbędzie się <br>
-            <strong>
-              31 lipca 2021 o godz. 16:00
-              w Pałacu Lenartowice
-            </strong> <br>
-            
-            Po ceremonii liczymy 
-            na wspólną zabawę do białego rana.<br>            
-            Prosimy o potwierdzenie udziału
-            przed <br> 20.06.2021
-            </p>
+        <h1>Aneta i Dawid</h1>
+        <p>
+          Wraz z rodzicami z radością zapraszamy na nasz ślub, który odbędzie
+          się
+          <br />
+          <strong>
+            31 lipca 2021 o godz. 16:00 w Pałacu Lenartowice
+          </strong>
+          <br />
+
+          Po ceremonii liczymy na wspólną zabawę do białego rana.
+          <br />
+          Wesele plenerowe odbędzie się pod namiotem
+          Prosimy o potwierdzenie udziału przed
+          <br />
+          14.06.2021
+        </p>
       </section>
+      <hr />
+      <section id="plan">
+        <h1>Plan</h1>
+        <div class="timeline">
+          <div class="event">
+            <p class="godzina">TODO</p>
+            <p>Zakwaterowanie</p>
+            <p>
+              Od 1x:00 zaczyna się zakwaterowanie w Winnicy Jaworek, o 1X:00
+            </p>
+          </div>
+          <div class="event">
+            <p class="godzina">16:00</p>
+            <p>Ceremonia</p>
+            <p>O 16:00 zaczynamy ceremonię ślubu w okolicach polany.</p>
+          </div>
+          <div class="event">
+            <p class="godzina">16:30</p>
+            <p>Obiad</p>
+            <p>Zaczynamy popołudniowym obiadem, po którym powoli rozpoczyna się zabawa.</p>
+          </div>
+          <div class="event">
+            <p class="godzina">02:00</p>
+            <p>DJ kończy grać</p>
+            <p>O 16:00 zaczynamy ceremonię ślubu wokolicach polany.</p>
+          </div>
+          <div class="event">
+            <p class="godzina">03:00</p>
+            <p>Bus zaczyna wozić</p>
+            <p>Bus będzie zabieral chętnych do Winnicy, ala'Hotelu oraz Wrocławia</p>
+          </div>
+          <div class="event">
+            <p class="godzina">09:00</p>
+            <p>Śniadanie w a la'Hotelu</p>
+            <p>O 16:00 zaczynamy ceremonię ślubu wokolicach polany.</p>
+          </div>
+          <div class="event">
+            <p class="godzina">02:00</p>
+            <p>Śniadanie w Winnicy</p>
+            <p>O 16:00 zaczynamy ceremonię ślubu wokolicach polany.</p>
+          </div>
+        </div>
+      </section>
+      <hr />
       <section class="mapa" id="mapa">
+        <h1>Mapa</h1>
         <div id="mapa2"></div>
       </section>
+
       <section class="kontakt" id="kontakt">
         <h1>Kontakt</h1>
         <p>Informacje kontaktowe i inne:</p>
         <ul>
-          <li>Aneta 668 405 323 </li>
-          <li>Dawid 602 635 894 </li>
+          <li>Aneta 668 405 323</li>
+          <li>Dawid 602 635 894</li>
         </ul>
       </section>
     </main>
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-   crossorigin=""/>
-   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+
     <script async src="/js/mapa.js"></script>
+    <script async src="/js/nav.js"></script>
   </body>
 </html>

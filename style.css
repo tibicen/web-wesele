@@ -1,121 +1,250 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400&family=Quicksand:wght@300&display=swap');
 
 :root {
-    --black: rgb(60,60,60);
-    /* --color: hsl(44, 79%, 82%); */
-    --color: hsl(44, 70%, 55%);
-    --border: 1px solid #80808054;
-    --shadow: 0 0 10px -5px;
+  --black: rgb(60, 60, 60);
+  /* --color: hsl(44, 79%, 82%); */
+  --color: hsl(44, 70%, 55%);
+  --border: 1px solid #80808054;
+  --shadow: 0 0 10px -5px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+  /* font-family: 'Annie Use Your Telescope', cursive; */
+  font-family: 'Jost', sans-serif;
+  font-weight: 100;
+  /* font-family: 'Quicksand', sans-serif; */
+  color: var(--black);
 }
 
 
-* {
-    margin: 0;
-    padding: 0;
-    /* font-family: 'Annie Use Your Telescope', cursive; */
-    font-family: 'Jost', sans-serif;
-    font-weight: 100;
-    /* font-family: 'Quicksand', sans-serif; */
-    color: var(--black);
+a {
+  text-decoration: none;
+  color: var(--color);
 }
 
 nav {
-    background-color: white;
-    position: fixed;
-    bottom: 1em;
-    display: inline-block;
-    border-radius: 1em;
-    box-shadow: var(--shadow);
-    border: var(--border);
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    
-    
+  background-color: white;
+  position: fixed;
+  bottom: 1em;
+  display: inline-block;
+  border-radius: 1em;
+  box-shadow: var(--shadow);
+  border: var(--border);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    padding: 0 1em;
+  list-style: none;
+  display: flex;
+  padding: 0 1em;
 }
 
 nav ul li {
-    text-decoration: none;
-    padding: 1em 1em;
-    flex: auto;
-    text-align: center;
-    min-width: 3em;
+  text-decoration: none;
+  padding: 1em 1em;
+  flex: auto;
+  text-align: center;
+  min-width: 3em;
 }
 
-a {
-    text-decoration: none !important;
-    color: var(--color) !important;
+
+nav ul li a{
+  color: var(--black);
+  transition: all 100ms ease-in-out;
+}
+
+.active {
+  color: var(--color);
 }
 
 strong {
-    color: var(--color);
-    line-height: 2em;
-    font-size: 1.3em;
-    font-weight: 400;
+  color: var(--color);
+  line-height: 2em;
+  font-size: 1.3em;
+  font-weight: 400;
 }
 
-header {
-    width: 100vw;
-    /* height: 100vh; */
-    display: flex;
-    flex-direction: column;
-    /* background-image: url("/img/portret-wesele.png") !important;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat; */
+#info {
+  display: flex;
+  flex-direction: column;
 }
 
-header img {
-    /* display: none; */
-    height: auto;
-    width: 100%;
-    max-width: 700px;
-    max-height: 700px;
-    margin: auto;
-    margin-top: 0;
+#info img {
+  height: auto;
+  width: 100%;
+  max-width: 600px;
+  max-height: 600px;
+  margin: auto;
+  margin-top: 0;
 }
 
-header h1 {
-    text-align: center;
-    flex: auto;
-    color: var(--color);
-    line-height: 1em;
+h1 {
+  text-align: center;
+  flex: auto;
+  color: var(--color);
+  font-size: 2em;
+  /* text-decoration-line: overline underline; */
+  /* text-decoration-thickness: 1.5px; */
+  /* border-top: 1px solid;
+    border-bottom: 1px solid; */
+  margin: auto;
 }
 
 section {
-    padding: 1em;
-    width: 90vw;
-    margin: auto;
+padding-top: 2em;
+padding-bottom: 2em;
+  width: 90vw;
+  margin: auto;
 }
 
-#info, #kontakt {
-    max-width: 500px;
-    text-justify: distribute;
-    text-align: center;
-    padding-bottom: 3em;
+section:first-of-type {
+    padding-top: 0;
+}
+
+hr {
+    width: 50vw;
+    max-width: 300px;
+    height: 1px;
+    background-color: var(--color);
+    margin: auto;
+    /* margin-bottom: 2em;
+    margin-top: 2em; */
+    border: none;
+  }
+
+#plan,
+#kontakt,
+#info p {
+  max-width: 500px;
+  text-justify: distribute;
+  text-align: center;
+  margin: auto;
 }
 
 #kontakt {
-    margin-bottom: 8em;
+  margin-bottom: 8em;
 }
+
 #mapa2 {
-    margin-top: 1em;
-    width: 90vw;
-    height: 50vh;
-    margin: auto;
-    border: var(--border);
-    border-radius: 1em;
-    box-shadow: var(--shadow);
+  width: 90vw;
+  height: 50vh;
+  margin: auto;
+  margin-top: 1em;
+  border: var(--border);
+  border-radius: 1em;
+  box-shadow: var(--shadow);
 }
 
 .leaflet-marker-icon {
-    filter: hue-rotate(210deg) brightness(1.6);
+  filter: hue-rotate(210deg) brightness(1.6);
 }
+/* 
+.event {
+  display: grid;
+  grid-template-areas:
+    'godzina tytul'
+    'godzina opis';
+    grid-template-columns: 50px auto;
+}
+
+.event::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  z-index: 100;
+  background-color: var(--color);
+  position: absolute;
+  transform: translate(calc(45px + 2em));
+}
+
+
+
+.event .godzina,
+.last {
+  grid-area: godzina;
+  border-right: 1px solid var(--color);
+  text-align: right;
+  padding: 1em;
+  padding-top: 0;
+  margin-right: 1em;
+}
+
+.event p:nth-of-type(2) {
+  grid-area: tytul;
+  padding-right: 0.5em;
+  text-align: left;
+}
+
+.event p:nth-of-type(3) {
+  grid-area: opis;
+  padding-bottom: 1em;
+  text-align: left;
+}
+
+.event .last {
+  border-right: 0px solid var(--color);
+} */
+
+.event {
+  margin: auto;
+  margin-left: 100px;
+  min-height: 30px;
+  border-left: 1px dashed var(--color);
+  padding: 0 0 30px 30px;
+  position: relative;
+  text-align: left;
+}
+
+.event::before {
+  content: " ";
+  border-radius: 50%;
+  left: -12px;
+  /* top: 0px; */
+  width: 15px;
+  height: 15px;
+  background: var(--color);
+  position: absolute;
+  border: 4px solid white;
+}
+
+.event:last-child {
+  border-left: 0;
+}
+
+.event p:nth-of-type(1) {
+  position: absolute;
+  width: 100px;
+  left: -120px;
+  text-align: right;
+}
+
+.event p:nth-of-type(2) {
+  font-weight: 400;
+}
+
+.event p:nth-of-type(3) {
+  text-align: justify;
+}
+
+
+@media screen and (min-width: 900px) {
+    nav {
+      top: 1em;
+      left: 1em;
+      bottom: auto;
+      transform: none;
+
+    }
+
+    nav ul li {
+        padding: 1em .1em;
+    }
+  }
