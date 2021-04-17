@@ -1,4 +1,16 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400&family=Quicksand:wght@300&display=swap');
+
+:root {
+    --black: rgb(60,60,60);
+    /* --color: hsl(44, 79%, 82%); */
+    --color: hsl(44, 70%, 55%);
+    --border: 1px solid #80808054;
+    --shadow: 0 0 10px -5px;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +18,7 @@
     font-family: 'Jost', sans-serif;
     font-weight: 100;
     /* font-family: 'Quicksand', sans-serif; */
-    color: rgb(58, 58, 58);
+    color: var(--black);
 }
 
 nav {
@@ -15,8 +27,8 @@ nav {
     bottom: 1em;
     display: inline-block;
     border-radius: 1em;
-    box-shadow: 0 0 10px -5px;
-    border: 1px solid #80808054;
+    box-shadow: var(--shadow);
+    border: var(--border);
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
@@ -38,20 +50,44 @@ nav ul li {
     min-width: 3em;
 }
 
-li a {
-    text-decoration: none;
-    color: rgb(187, 143, 11);
+a {
+    text-decoration: none !important;
+    color: var(--color) !important;
+}
+
+strong {
+    color: var(--color);
+    line-height: 2em;
+    font-size: 1.3em;
+    font-weight: 400;
 }
 
 header {
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
+    flex-direction: column;
+    /* background-image: url("/img/portret-wesele.png") !important;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat; */
 }
+
 header img {
-    height: 90vh;
+    /* display: none; */
+    height: auto;
+    width: 100%;
+    max-width: 700px;
+    max-height: 700px;
     margin: auto;
     margin-top: 0;
+}
+
+header h1 {
+    text-align: center;
+    flex: auto;
+    color: var(--color);
+    line-height: 1em;
 }
 
 section {
@@ -63,19 +99,23 @@ section {
 #info, #kontakt {
     max-width: 500px;
     text-justify: distribute;
-    text-align: justify;
+    text-align: center;
     padding-bottom: 3em;
 }
 
 #kontakt {
-    height: 100vh;
+    margin-bottom: 8em;
 }
 #mapa2 {
     margin-top: 1em;
     width: 90vw;
     height: 50vh;
     margin: auto;
-    border: 1px solid #80808054;
+    border: var(--border);
     border-radius: 1em;
-    box-shadow: 0 0 10px -5px;
+    box-shadow: var(--shadow);
+}
+
+.leaflet-marker-icon {
+    filter: hue-rotate(210deg) brightness(1.6);
 }
