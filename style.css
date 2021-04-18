@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap');
 
 :root {
-  --black: rgb(60, 60, 60);
+  --black: hsl(0, 0%, 30%);
+  --gray: hsl(0, 0%, 50%);
   --color: hsl(44, 70%, 55%);
   --border: 1px solid #80808054;
   --shadow: 0 0 10px -5px;
@@ -14,13 +15,35 @@
   text-decoration: none;
   list-style: none;
   font-family: 'Jost', sans-serif;
-  font-weight: 100;
   color: var(--black);
+}
+
+h1,
+h2,
+h3,
+p,
+a {
+  font-weight: 100;
 }
 
 a {
   text-decoration: none;
   color: var(--color);
+}
+
+h1 {
+  text-align: center;
+  flex: auto;
+  color: var(--color);
+  font-size: 2em;
+  margin: auto;
+}
+
+strong {
+  color: var(--color);
+  line-height: 2em;
+  font-size: 1.3em;
+  font-weight: 400;
 }
 
 nav {
@@ -59,35 +82,6 @@ nav ul li a {
   color: var(--color);
 }
 
-strong {
-  color: var(--color);
-  line-height: 2em;
-  font-size: 1.3em;
-  font-weight: 400;
-}
-
-#info {
-  display: flex;
-  flex-direction: column;
-}
-
-#info img {
-  height: auto;
-  width: 100%;
-  max-width: 500px;
-  max-height: 500px;
-  margin: auto;
-  margin-top: 0;
-}
-
-h1 {
-  text-align: center;
-  flex: auto;
-  color: var(--color);
-  font-size: 2em;
-  margin: auto;
-}
-
 section {
   padding-top: 2em;
   padding-bottom: 2em;
@@ -108,36 +102,43 @@ hr {
   border: none;
 }
 
+
 #plan,
-#kontakt,
-#info p {
+#kontakt p,
+#info p,
+#kontakt {
   max-width: 500px;
   text-justify: distribute;
   text-align: center;
   margin: auto;
 }
 
-#kontakt {
-  margin-bottom: 8em;
+ 
+
+#info {
+  display: flex;
+  flex-direction: column;
 }
 
-#mapa2 {
-  width: 90vw;
-  height: 50vh;
+#info img {
+  height: auto;
+  width: 100%;
+  max-width: 500px;
+  max-height: 500px;
   margin: auto;
-  margin-top: 1em;
-  border: var(--border);
-  border-radius: 1em;
-  box-shadow: var(--shadow);
+  margin-top: 0;
 }
 
-.leaflet-marker-icon {
-  filter: hue-rotate(210deg) brightness(1.6);
+#info p:nth-last-of-type(1) {
+  text-align: justify;
+  background-color: rgb(255, 244, 194);
+  padding: 1em 2em;
+  border-radius: .5em;
 }
 
 .event {
   margin: auto;
-  margin-left: 100px;
+  margin-left: 4em;
   min-height: 30px;
   border-left: 1px dashed var(--color);
   padding: 0 0 30px 30px;
@@ -162,9 +163,10 @@ hr {
 
 .event p:nth-of-type(1) {
   position: absolute;
-  width: 100px;
-  left: -120px;
+  width: 3em;
+  left: -4em;
   text-align: right;
+  color: var(--gray);
 }
 
 .event p:nth-of-type(2) {
@@ -173,6 +175,45 @@ hr {
 
 .event p:nth-of-type(3) {
   text-align: justify;
+  color: var(--gray);
+}
+
+#mapa2 {
+  width: 90vw;
+  height: 50vh;
+  margin: auto;
+  margin-top: 1em;
+  border: var(--border);
+  border-color: var(--color);
+  border-radius: 1em;
+  box-shadow: var(--shadow);
+}
+
+#mapa2 a {
+  color: var(--color) !important;
+}
+
+.leaflet-marker-icon {
+  filter: hue-rotate(210deg) brightness(1.45);
+}
+
+.leaflet-popup-content a {
+  font-weight: 400;
+  text-align: center;
+  display: block;
+  width: auto;
+}
+
+#kontakt {
+  margin-bottom: 8em;
+  /* border: 1px solid; */
+  /* height: 50vh; */
+
+}
+
+#kontakt a {
+  font-weight: 400;
+  line-height: 2em;
 }
 
 @media screen and (min-width: 900px) {
@@ -185,5 +226,9 @@ hr {
 
   nav ul li {
     padding: 1em 0.1em;
+  }
+
+  #kontakt {
+    height: auto;
   }
 }

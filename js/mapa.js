@@ -11,16 +11,16 @@ if (contactMap) {
 
 
 var palac = new L.marker([51.24646,16.79723], { opacity: 1 });
-palac.bindTooltip("Wesele", { permanent: true, className: "city-name", offset: [-15, -30], direction: 'center' });
-palac.bindPopup("W zabytkowym pałacyku Lenartowice odbędzie się ślub i wesele.");
+palac.bindTooltip("Wesele", { permanent: true, className: "city-name", offset: [25, 0], direction: 'center' });
+palac.bindPopup('W zabytkowym pałacyku Lenartowice odbędzie się ślub i wesele.<br><a href="https://goo.gl/maps/j1MrSKQsTLxZGAgZ8">Prowadź</a>');
 
 var winnica = new L.marker([51.19573, 16.73738], { opacity: 1 });
-winnica.bindTooltip("Winnica", { permanent: true, className: "city-name", offset: [-15, -30], direction: 'center' });
-winnica.bindPopup("Noclegi w Winnicy Jaworek");
+winnica.bindTooltip("Winnica", { permanent: true, className: "city-name", offset: [-57, 5], direction: 'center' });
+winnica.bindPopup('Noclegi w Winnicy Jaworek<br><a href="https://g.page/WinniceJaworek?share">Prowadź</a>');
 
 var hotel = new L.marker([51.19621, 16.74518], { opacity: 1 });
-hotel.bindTooltip("Hotel", { permanent: true, className: "city-name", offset: [-15, -30], direction: 'center' });
-hotel.bindPopup("Noclegi w Hotelu");
+hotel.bindTooltip("Hotel", { permanent: true, className: "city-name", offset: [20, 5], direction: 'center' });
+hotel.bindPopup('Noclegi w Hotelu<br><a href="https://goo.gl/maps/6rCXnceAmqw8wfgx7">Prowadź</a>');
 
 
 
