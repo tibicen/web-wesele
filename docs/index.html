@@ -36,7 +36,9 @@
         </p>
         <p>Tutaj będą aktualizowane na bieżąco wszelkie najnowsze informacje o naszym wydarzeniu.</p>
       </section>
+      
       <hr />
+      
       <section id="plan">
         <h1>Plan</h1>
         <div class="timeline">
@@ -86,7 +88,37 @@
           </div>
         </div>
       </section>
+      
       <hr />
+      <section id="potwierdz">
+        <h1>Potwierdź obecność</h1>
+        <div id="error" class="hide">Coś poszło nie tak spróbuj ponownie.</div>
+        <div id="sukces" class="hide">Powierdzono uczestnictwo. Dziękujemy.</div>
+        <form action="http://127.0.0.1:8888/" method="post">
+          <input placeholder="Imię" name="imie" type="text" />
+          <input placeholder="Nazwisko" name="nazwisko" type="text" />
+          <div class="dieta">
+            <label for="dieta">Jaka forma jedzenia:</label><br>
+            <input type="radio" name="dieta" value="zwykla"   id="zwykla"><label for="zwykla">Zwykła</label><br>
+            <input type="radio" name="dieta" value="wege" id="wege"><label for="wege">Wege</label><br>
+            <input type="radio" name="dieta" value="wegan"  id="wegan"><label for="wegan">Wegan</label><br>
+          </div>
+          <div class="uczulenia">
+            <input type="checkbox" name="uczulenia"/><label for="uczulenia">Czy masz jakieś uczulenia?</label><br>
+          </div>
+          <div class="uwagi">
+            <label for="uwagi">Uwagi/uczulenia:</label>
+            <textarea name="uwagi" type="text" cols="40" rows="5"></textarea><br>
+          </div>
+          <input class="potwierdz" value="Potwierdź" type="submit" />
+        </form>
+
+      </section>
+
+      <hr />
+
+
+
       <section class="mapa" id="mapa">
         <h1>Mapa</h1>
         <div id="mapa2"></div>
@@ -119,8 +151,8 @@
       crossorigin=""
     ></script>
 
-    <script async src="/js/mapa.js"></script>
-    <script async src="/js/nav.js"></script>
+    <script async src="./js/mapa.js"></script>
+    <script async src="./js/nav.js"></script>
   </body>
 </html>
 

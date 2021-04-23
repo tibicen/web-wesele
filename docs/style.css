@@ -106,7 +106,8 @@ hr {
 #plan,
 #kontakt p,
 #info p,
-#kontakt {
+#kontakt,
+form {
   max-width: 500px;
   text-justify: distribute;
   text-align: center;
@@ -177,6 +178,93 @@ hr {
   text-align: justify;
   color: var(--gray);
 }
+
+
+form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: nowrap; */
+}
+
+form * {
+  margin: auto;
+}
+
+input {
+  border: 1px solid var(--color);
+  border-radius: .5em;
+  padding: .5em 1em;
+  margin-top: 1em;
+}
+
+input:focus {
+  border: 2px solid var(--color);
+  box-shadow: var(--shadow);
+}
+
+.dieta, .uczulenia, .uwagi {
+  margin-top: 1em !important;
+}
+
+.potwierdz {
+  padding: 1em;
+  margin-top: 1em;
+  color: var(--color);
+  border: var(--border);
+  border-color: var(--color);
+  border-radius: 1em;
+  background-color: white;
+  /* box-shadow: var(--shadow); */
+}
+
+.potwierdz:hover {
+  background-color: var(--color);
+  color: white;
+  transition: all .5s ease-in-out;
+
+}
+
+
+
+
+.hide {
+  display: none;
+}
+
+#error {
+  position: relative;
+  background-color: rgb(223, 108, 108);
+  width: max-content;
+  padding: .5em 1em;
+  text-align: center;
+  border-radius: .5em;
+  color: var(--black);
+  font-weight: 500;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: var(--shadow);
+  animation: seconds 2.0s forwards;
+  animation-iteration-count: 1;
+  animation-delay: 3s;
+}
+
+#error.hide:target,
+#sukces.hide:target {
+  visibility: visible;
+}
+
+
+@keyframes seconds {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 
 #mapa2 {
   width: 90vw;
