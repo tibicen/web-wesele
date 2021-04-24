@@ -4,7 +4,7 @@ from bottle import post, get
 import json
 import os
 
-f = open("docs/index.html")
+#f = open("docs/index.html")
 
 @get("/")
 def formularz():
@@ -36,7 +36,8 @@ def create():
     password = request.forms.get("nazwisko")
     print(request.forms.items())
     # TODO save
-    redirect("http://127.0.0.1:5500/docs/#potwierdz")
+    #redirect("http://127.0.0.1:5500/docs/#potwierdz")
+    redirect("http://tibicen.pythonanywhere.com")
 
 
 app = application = default_app()
