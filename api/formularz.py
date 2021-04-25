@@ -1,43 +1,57 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from bottle import default_app
 from bottle import request, redirect
 from bottle import post, get
 import json
 import os
 
-#f = open("docs/index.html")
+
+def isfolder():
+    if not os.path.exists("ludzie"):
+        os.mkdir("ludzie")
+
 
 @get("/")
 def formularz():
-    return """
-<form action="http://127.0.0.1:8888/" method="post">
-          <input placeholder="Imię" name="imie" type="text" />
-          <input placeholder="Nazwisko" name="nazwisko" type="text" />
-          <div class="dieta">
-            <label for="dieta">Jaka forma jedzenia:</label><br>
-            <input type="radio" name="dieta" value="zwykla"   id="zwykla"><label for="zwykla">Zwykła</label><br>
-            <input type="radio" name="dieta" value="wege" id="wege"><label for="wege">Wege</label><br>
-            <input type="radio" name="dieta" value="wegan"  id="wegan"><label for="wegan">Wegan</label><br>
-          </div>
-          <div class="uczulenia">
-            <input type="checkbox" name="uczulenia"/><label for="uczulenia">Czy masz jakieś uczulenia?</label><br>
-          </div>
-          <div class="uwagi">
-            <label for="uwagi">Uwagi/uczulenia:</label>
-            <textarea name="uwagi" type="text" cols="40" rows="5"></textarea><br>
-          </div>
-          <input class="potwierdz" value="Potwierdź" type="submit" />
-        </form>
-    """
+	isfolder()
+	ppl = os.listdir("ludzie")
+	ludzie = '''
+	<h1>Lista uczestników:</h1>
+	<ul>\n
+	'''
+	for x in ppl:
+		osoba = os.path.splitext(x)[0]
+		naz, im = osoba.split()
+		naz = naz[:3]
+		im = im[:3]
+		ludzie += f"<li>{naz} {im}</li>\n"
+    
+	ludzie += "</ul>\n"
+	return ludzie
 
 
 @post("/")
 def create():
-    username = request.forms.get("imie")
-    password = request.forms.get("nazwisko")
-    print(request.forms.items())
-    # TODO save
-    #redirect("http://127.0.0.1:5500/docs/#potwierdz")
-    redirect("http://tibicen.pythonanywhere.com")
+    imie = request.forms.imie
+    nazwisko = request.forms.nazwisko
+    dieta = request.forms.dieta
+    uczulenia = request.forms.uczulenia
+    uwagi = request.forms.uwagi
+
+    if imie == "" or nazwisko == "" or dieta == "":
+        # redirect("http://127.0.0.1:5500/docs/#error")
+        redirect("https://wesele.huczynski.pl/#error")
+    else:
+        isfolder()
+        name = f"{nazwisko} {imie}.txt"
+        f = open(os.path.join("ludzie", name), "w")
+        for x in (imie, nazwisko, dieta, uczulenia, uwagi):
+            print(x)
+            f.write(x + "\n")
+        f.close()
+        # redirect("http://127.0.0.1:5500/docs/#sukces")
+        redirect("https://wesele.huczynski.pl/#sukces")
 
 
 app = application = default_app()

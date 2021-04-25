@@ -250,9 +250,27 @@ input:focus {
   animation-delay: 3s;
 }
 
+#sukces {
+  position: relative;
+  background-color: rgb(173, 223, 108);
+  width: max-content;
+  padding: .5em 1em;
+  text-align: center;
+  border-radius: .5em;
+  color: var(--black);
+  font-weight: 500;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: var(--shadow);
+  animation: seconds 2.0s forwards;
+  animation-iteration-count: 1;
+  animation-delay: 3s;
+}
+
 #error.hide:target,
 #sukces.hide:target {
-  visibility: visible;
+  display: block;
 }
 
 

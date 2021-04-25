@@ -1,0 +1,5 @@
+ludzie
+
+*.pyc
+__pycache__
+.vscode
