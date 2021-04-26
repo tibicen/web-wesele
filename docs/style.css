@@ -4,6 +4,7 @@
   --black: hsl(0, 0%, 30%);
   --gray: hsl(0, 0%, 50%);
   --color: hsl(44, 70%, 55%);
+  --colorback: hsl(44, 70%, 95%);
   --border: 1px solid #80808054;
   --shadow: 0 0 10px -5px;
 }
@@ -190,12 +191,17 @@ input, textarea {
   border-radius: 0.5em;
   padding: 0.5em 1em;
   margin-top: 1em;
-  box-shadow: 0 0 5px -1px gray inset;
+}
+
+input[type="text"],
+textarea {
+  transition: all 0.5s ease-in-out;
 }
 
 
 input:focus, textarea:focus {
-  border: 3px solid var(--color);
+  border: 1px solid var(--color);
+  background-color: var(--colorback);
 }
 
 textarea::after {

@@ -88,27 +88,24 @@ def formularz():
 
 @post("/")
 def create():
-    try:
-        p = {
-            "imie": request.forms.imie,
-            "nazwisko": request.forms.nazwisko,
-            "dieta": request.forms.dieta,
-            "uczulenia": request.forms.uczulenia,
-            "uwagi": request.forms.uwagi,
-        }
+    p = {
+        "imie": request.forms.imie,
+        "nazwisko": request.forms.nazwisko,
+        "dieta": request.forms.dieta,
+        "uczulenia": request.forms.uczulenia,
+        "uwagi": request.forms.uwagi,
+    }
 
-        if p["imie"] == "" or p["nazwisko"] == "" or p["dieta"] == "":
-            redirect(f"{URL}#error")
-        else:
-            isfolder()
-            naz = p["nazwisko"]
-            imie = p["imie"]
-            name = f"{naz} {imie}.json"
-            with open(os.path.join("ludzie", name), "w") as f:
-                json.dump(p, f)
-            redirect(f"{URL}#sukces")
-    except:
+    if p["imie"] == "" or p["nazwisko"] == "" or p["dieta"] == "":
         redirect(f"{URL}#error")
+    else:
+        isfolder()
+        naz = p["nazwisko"]
+        imie = p["imie"]
+        name = f"{naz} {imie}.json"
+        with open(os.path.join("ludzie", name), "w") as f:
+            json.dump(p, f)
+        redirect(f"{URL}#sukces")
 
 
 app = application = default_app()
