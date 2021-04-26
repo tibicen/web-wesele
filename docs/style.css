@@ -225,8 +225,9 @@ input:focus {
 
 }
 
-
-
+.uczulenia label, .dieta label {
+  margin-left: .5em;
+}
 
 .hide {
   display: none;
@@ -322,6 +323,11 @@ input:focus {
   line-height: 2em;
 }
 
+.mobile-hide {
+  display: none;
+  visibility: hidden;
+}
+
 @media screen and (min-width: 900px) {
   nav {
     top: 1em;
@@ -337,4 +343,9 @@ input:focus {
   #kontakt {
     height: auto;
   }
+
+  .mobile-hide {
+    display: block;
+  }
+
 }

@@ -1,5 +1,6 @@
 ludzie
-
+ilosc.txt
+ludzie.json
 *.pyc
 __pycache__
 .vscode

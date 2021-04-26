@@ -10,7 +10,7 @@
   <body data-spy="scroll" data-target="#nav">
     <nav id="nav">
       <ul>
-        <li><a class="nav-link active" href="#info">Info</a></li>
+        <li class="mobile-hide"><a class="nav-link active" href="#info">Info</a></li>
         <li><a class="nav-link" href="#plan">Plan</a></li>
         <li><a class="nav-link" href="#potwierdz">Potwierdz</a></li>
         <li><a class="nav-link" href="#mapa">Mapa</a></li>
@@ -95,8 +95,8 @@
         <div id="error" class="hide">Coś poszło nie tak spróbuj ponownie.</div>
         <div id="sukces" class="hide">Powierdzono uczestnictwo. Dziękujemy.</div>
         <h1>Potwierdź obecność</h1>
-        <form action="https://tibicen.pythonanywhere.com/" method="post">
-        <!-- <form action="http://127.0.0.1:8888/" method="post"> -->
+        <!-- <form action="https://tibicen.pythonanywhere.com/" method="post"> -->
+        <form action="http://127.0.0.1:8888/" method="post">
           <input placeholder="Imię" name="imie" type="text" required />
           <input placeholder="Nazwisko" name="nazwisko" type="text" required />
           <div class="dieta">
