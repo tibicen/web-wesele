@@ -7,8 +7,9 @@ from bottle import auth_basic
 import json
 import os
 
-URL = "http://127.0.0.1:5500/docs/"
-# URL = "https://wesele.huczynski.pl/"
+# URL = "http://127.0.0.1:5500/docs/"
+URL = "https://wesele.huczynski.pl/"
+
 
 def isfolder():
     if not os.path.exists("ludzie"):
@@ -21,9 +22,10 @@ def user_auth(user, password):
     else:
         return False
 
+
 def check_update():
     if os.path.exists("ilosc.txt"):
-        return int(open("ilosc.txt", 'r').read())
+        return int(open("ilosc.txt", "r").read())
     else:
         return 0
 
@@ -47,67 +49,66 @@ def formularz():
      </table> 
 	"""
     if check_update() == len(ppl):
-        with open("ludzie.json", 'r') as f:
+        with open("ludzie.json", "r") as f:
             dieta, ludzie = json.load(f)
     else:
         ludzie = []
         dieta = {
             "zwykla": 0,
             "wege": 0,
-            "wegan": 0, 
+            "wegan": 0,
         }
         for x in ppl:
-            with open(os.path.join('ludzie', x)) as f:
+            with open(os.path.join("ludzie", x)) as f:
                 osoba = json.load(f)
             ludzie.append(osoba)
             dieta[osoba["dieta"]] += 1
 
-        f = open("ilosc.txt", 'w')
+        f = open("ilosc.txt", "w")
         f.write(str(len(ppl)))
         f.close()
-        with open("ludzie.json", 'w') as f:
+        with open("ludzie.json", "w") as f:
             json.dump([dieta, ludzie], f)
-    
-    text_dieta = ''
-    for k,v in dieta.items():
+
+    text_dieta = ""
+    for k, v in dieta.items():
         text_dieta += f"{k}:{v}<br>"
     text_dieta += f"Potwierdziły {len(ludzie)} osoby"
-    
-    dane = ''
+
+    dane = ""
     for o in sorted(ludzie, key=lambda x: x["nazwisko"].lower()):
-        osoba = '<tr>'
-        for k,v in o.items():
+        osoba = "<tr>"
+        for k, v in o.items():
             osoba += f'<td style="border:1px solid gray">{v}</td>'
-        osoba += '</tr>'
+        osoba += "</tr>"
         dane += osoba
 
-    
-    return html.format(text_dieta,dane)
+    return html.format(text_dieta, dane)
 
 
 @post("/")
 def create():
-    p = {
-        "imie": request.forms.imie,
-        "nazwisko": request.forms.nazwisko,
-        "dieta": request.forms.dieta,
-        "uczulenia": request.forms.uczulenia,
-        "uwagi": request.forms.uwagi,
-    }
+    try:
+        p = {
+            "imie": request.forms.imie,
+            "nazwisko": request.forms.nazwisko,
+            "dieta": request.forms.dieta,
+            "uczulenia": request.forms.uczulenia,
+            "uwagi": request.forms.uwagi,
+        }
 
-    if p["imie"] == "" or p["nazwisko"] == "" or p["dieta"] == "":
+        if p["imie"] == "" or p["nazwisko"] == "" or p["dieta"] == "":
+            redirect(f"{URL}#error")
+        else:
+            isfolder()
+            naz = p["nazwisko"]
+            imie = p["imie"]
+            name = f"{naz} {imie}.json"
+            with open(os.path.join("ludzie", name), "w") as f:
+                json.dump(p, f)
+            redirect(f"{URL}#sukces")
+    except:
         redirect(f"{URL}#error")
-    else:
-        isfolder()
-        naz = p["nazwisko"]
-        imie = p["imie"]
-        name = f"{naz} {imie}.json"
-        with open(os.path.join("ludzie", name), "w") as f:
-            json.dump(p, f)
-        # for x in (imie, nazwisko, dieta, uczulenia, uwagi):
-        #     print(x)
-        #     f.write(x + "\n")
-        redirect(f"{URL}#sukces")
 
 
 app = application = default_app()

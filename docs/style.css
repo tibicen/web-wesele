@@ -50,7 +50,7 @@ nav {
   background-color: white;
   position: fixed;
   bottom: 1em;
-  display: inline-block;
+  display: block;
   border-radius: 1em;
   box-shadow: var(--shadow);
   border: var(--border);
@@ -67,10 +67,8 @@ nav ul {
 
 nav ul li {
   text-decoration: none;
-  padding: 1em 1em;
-  flex: auto;
+  padding: 1em 0.7em;
   text-align: center;
-  min-width: 3em;
 }
 
 nav ul li a {
@@ -102,7 +100,6 @@ hr {
   border: none;
 }
 
-
 #plan,
 #kontakt p,
 #info p,
@@ -113,8 +110,6 @@ form {
   text-align: center;
   margin: auto;
 }
-
- 
 
 #info {
   display: flex;
@@ -134,7 +129,7 @@ form {
   text-align: justify;
   background-color: rgb(255, 244, 194);
   padding: 1em 2em;
-  border-radius: .5em;
+  border-radius: 0.5em;
 }
 
 .event {
@@ -179,7 +174,6 @@ form {
   color: var(--gray);
 }
 
-
 form {
   margin: auto;
   display: flex;
@@ -193,8 +187,8 @@ form * {
 
 input {
   border: 1px solid var(--color);
-  border-radius: .5em;
-  padding: .5em 1em;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
   margin-top: 1em;
 }
 
@@ -203,7 +197,9 @@ input:focus {
   box-shadow: var(--shadow);
 }
 
-.dieta, .uczulenia, .uwagi {
+.dieta,
+.uczulenia,
+.uwagi {
   margin-top: 1em !important;
 }
 
@@ -221,12 +217,12 @@ input:focus {
 .potwierdz:hover {
   background-color: var(--color);
   color: white;
-  transition: all .5s ease-in-out;
-
+  transition: all 0.5s ease-in-out;
 }
 
-.uczulenia label, .dieta label {
-  margin-left: .5em;
+.uczulenia label,
+.dieta label {
+  margin-left: 0.5em;
 }
 
 .hide {
@@ -237,16 +233,16 @@ input:focus {
   position: relative;
   background-color: rgb(223, 108, 108);
   width: max-content;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   text-align: center;
-  border-radius: .5em;
+  border-radius: 0.5em;
   color: var(--black);
   font-weight: 500;
   top: 22%;
   left: 50%;
   transform: translateX(-50%);
   box-shadow: var(--shadow);
-  animation: seconds 2.0s forwards;
+  animation: seconds 2s forwards;
   animation-iteration-count: 1;
   animation-delay: 3s;
 }
@@ -255,16 +251,16 @@ input:focus {
   position: relative;
   background-color: rgb(173, 223, 108);
   width: max-content;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   text-align: center;
-  border-radius: .5em;
+  border-radius: 0.5em;
   color: var(--black);
   font-weight: 500;
   top: 22%;
   left: 50%;
   transform: translateX(-50%);
   box-shadow: var(--shadow);
-  animation: seconds 2.0s forwards;
+  animation: seconds 2s forwards;
   animation-iteration-count: 1;
   animation-delay: 3s;
 }
@@ -274,7 +270,6 @@ input:focus {
   display: block;
 }
 
-
 @keyframes seconds {
   0% {
     opacity: 1;
@@ -283,7 +278,6 @@ input:focus {
     opacity: 0;
   }
 }
-
 
 #mapa2 {
   width: 90vw;
@@ -313,19 +307,11 @@ input:focus {
 
 #kontakt {
   margin-bottom: 8em;
-  /* border: 1px solid; */
-  /* height: 50vh; */
-
 }
 
 #kontakt a {
   font-weight: 400;
   line-height: 2em;
-}
-
-.mobile-hide {
-  display: none;
-  visibility: hidden;
 }
 
 @media screen and (min-width: 900px) {
@@ -337,15 +323,10 @@ input:focus {
   }
 
   nav ul li {
-    padding: 1em 0.1em;
+    padding: 1em 0.5em;
   }
 
   #kontakt {
     height: auto;
   }
-
-  .mobile-hide {
-    display: block;
-  }
-
 }
