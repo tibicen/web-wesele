@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-5c556a18.js",
+    "file": "start-e17771e9.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -45,7 +45,7 @@
     ]
   },
   "src/routes/zdjecie-[slot].svelte": {
-    "file": "pages/zdjecie-_slot_.svelte-1a7f7633.js",
+    "file": "pages/zdjecie-_slot_.svelte-60e81ff3.js",
     "src": "src/routes/zdjecie-[slot].svelte",
     "isEntry": true,
     "isDynamicEntry": true,
